@@ -14,7 +14,7 @@
             "metadata": {
                 "description": "The number of Selenium Grid nodes you need. Each node is setup on a separate VM. This is in addition to the VM on which the hub is setup."
             },
-            "defaultValue": 1
+            "defaultValue": 3
         },
         "username":{  
             "type":"string",
@@ -25,7 +25,7 @@
         },
         "password":{  
             "type":"securestring",
-            "defaultValue":"<3DevTestLabs!",
+            "defaultValue":"<3$DevTest#Labs!",
             "metadata":{
                 "description":"The password for the local account that will be created on all the new VMs."
             }
@@ -54,7 +54,7 @@
     },
     "variables":{  
         "vmStorageType":"Standard",
-        "vmsize":"Standard_F1s",
+        "vmsize":"Standard_DS11",
         "vmNamePrefix": "Selenium",
         "newLabId":"[resourceId('Microsoft.DevTestLab/labs', parameters('labName'))]",
         "labSubnetName":"[concat(variables('labVirtualNetworkName'), 'Subnet')]",
