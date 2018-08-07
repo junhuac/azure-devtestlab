@@ -1,6 +1,6 @@
 # Deploy a Selenium Grid on Azure DevTestLabs VMs.
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjunhuac%2Fazure-devtestlab%2Fmaster%2FSamples%2F201-dtl-create-lab-with-seleniumgrid%2Fazuredeploy.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjunhuac%2Fazure-devtestlab%2Ftest%2FSamples%2F201-dtl-create-lab-with-seleniumgrid%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 

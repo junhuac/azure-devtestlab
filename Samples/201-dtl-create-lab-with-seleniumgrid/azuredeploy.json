@@ -14,7 +14,7 @@
             "metadata": {
                 "description": "The number of Selenium Grid nodes you need. Each node is setup on a separate VM. This is in addition to the VM on which the hub is setup."
             },
-            "defaultValue": 3
+            "defaultValue": 1
         },
         "username":{  
             "type":"string",
@@ -162,6 +162,7 @@
                 "password":"[parameters('password')]",
                 "labVirtualNetworkId":"[variables('labVirtualNetworkId')]",
                 "labSubnetName":"[variables('labSubnetName')]",
+                "disallowPublicIpAddress": false,
                 "artifacts":[  
                     {  
                         "artifactId":"[resourceId('Microsoft.DevTestLab/labs/artifactSources/artifacts', parameters('labName'), 'public repo', 'windows-selenium')]"
