@@ -18,7 +18,7 @@
         },
         "username":{  
             "type":"string",
-            "defaultValue":"seleniumgriduser",
+            "defaultValue":"seleniumgrid",
             "metadata":{  
                 "description":"The username for the local account that will be created on all the new VMs."
             }
@@ -54,7 +54,7 @@
     },
     "variables":{  
         "vmStorageType":"Standard",
-        "vmsize":"Standard_DS11",
+        "vmsize":"Standard_E2s_v3",
         "vmNamePrefix": "Selenium",
         "newLabId":"[resourceId('Microsoft.DevTestLab/labs', parameters('labName'))]",
         "labSubnetName":"[concat(variables('labVirtualNetworkName'), 'Subnet')]",
@@ -95,7 +95,7 @@
                 "galleryImageReference":{  
                     "offer":"WindowsServer",
                     "publisher":"MicrosoftWindowsServer",
-                    "sku":"2012-R2-Datacenter",
+                    "sku":"2016-Datacenter",
                     "osType":"Windows",
                     "version":"latest"
                 },
