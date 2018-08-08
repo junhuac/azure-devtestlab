@@ -35,7 +35,7 @@
             "metadata": {
                 "description": "Download link for the selenium standalone server .jar file that you want to use."
             },
-            "defaultValue": "https://goo.gl/s4o9Vx"
+          "defaultValue": "https://goo.gl/4g538W"
         },
         "hubConfigJsonFile": {
             "type": "string",
