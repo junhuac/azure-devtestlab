@@ -55,7 +55,7 @@
     "variables":{  
         "vmStorageType":"Standard",
         "vmsize":"Standard_E2s_v3",
-        "vmNamePrefix": "Selenium",
+        "vmNamePrefix": "SeleniumGrid",
         "newLabId":"[resourceId('Microsoft.DevTestLab/labs', parameters('labName'))]",
         "labSubnetName":"[concat(variables('labVirtualNetworkName'), 'Subnet')]",
         "labVirtualNetworkName":"[concat('Dtl', parameters('labName'))]",
@@ -68,13 +68,13 @@
     },
     "resources":[  
         {  
-            "apiVersion":"2017-04-26-preview",
+            "apiVersion":"2018-02-01",
             "type":"Microsoft.DevTestLab/labs",
             "name":"[trim(parameters('labName'))]",
             "location":"[resourceGroup().location]",
             "resources":[  
                 {  
-                    "apiVersion":"2017-04-26-preview",
+                    "apiVersion":"2018-02-01",
                     "name":"[variables('labVirtualNetworkName')]",
                     "type":"virtualnetworks",
                     "dependsOn":[  
@@ -84,7 +84,7 @@
             ]
         },
         {  
-            "apiVersion":"2017-04-26-preview",
+            "apiVersion":"2018-02-01",
             "type":"Microsoft.DevTestLab/labs/virtualmachines",
             "name":"[concat(parameters('labName'), '/', variables('vmNamePrefix'), 'Hub')]",
             "location":"[resourceGroup().location]",
@@ -135,7 +135,7 @@
             }
         },
         {
-            "apiVersion":"2017-04-26-preview",
+            "apiVersion":"2018-02-01",
             "copy": {
                 "name": "nodeCopy",
                 "count": "[parameters('nodeCount')]"
@@ -150,7 +150,7 @@
                 "galleryImageReference":{  
                     "offer":"WindowsServer",
                     "publisher":"MicrosoftWindowsServer",
-                    "sku":"2012-R2-Datacenter",
+                    "sku":"2016-Datacenter",
                     "osType":"Windows",
                     "version":"latest"
                 },
@@ -162,7 +162,6 @@
                 "password":"[parameters('password')]",
                 "labVirtualNetworkId":"[variables('labVirtualNetworkId')]",
                 "labSubnetName":"[variables('labSubnetName')]",
-                "disallowPublicIpAddress": false,
                 "artifacts":[  
                     {  
                         "artifactId":"[resourceId('Microsoft.DevTestLab/labs/artifactSources/artifacts', parameters('labName'), 'public repo', 'windows-selenium')]"
