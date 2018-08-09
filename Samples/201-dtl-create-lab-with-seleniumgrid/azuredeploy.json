@@ -55,7 +55,7 @@
     "variables":{  
         "vmStorageType":"Standard",
         "vmsize":"Standard_E2s_v3",
-        "vmNamePrefix": "SeleniumGrid",
+        "vmNamePrefix": "Selenium",
         "newLabId":"[resourceId('Microsoft.DevTestLab/labs', parameters('labName'))]",
         "labSubnetName":"[concat(variables('labVirtualNetworkName'), 'Subnet')]",
         "labVirtualNetworkName":"[concat('Dtl', parameters('labName'))]",
