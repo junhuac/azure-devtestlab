@@ -55,6 +55,7 @@ $isConfigFileProvided = ![string]::IsNullOrWhiteSpace($configFileName)
 if($isConfigFileProvided)
 {
     #Download the specified config file
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
     Invoke-WebRequest -Uri $configFile -OutFile "$PWD\$configFileName"
     Write-Host -Object "Successfully downloaded the config file from $configFile." 
 }
