@@ -14,7 +14,7 @@
             "metadata": {
                 "description": "The number of Selenium Grid nodes you need. Each node is setup on a separate VM. This is in addition to the VM on which the hub is setup."
             },
-            "defaultValue": 1
+            "defaultValue": 10
         },
         "username":{  
             "type":"string",
@@ -42,14 +42,14 @@
             "metadata": {
                 "description": "Download link for the hub config json file you wish to use to configure the hub. For example you may upload the required config file to an Azure storage account and provide the link here."
             },
-            "defaultValue": ""
+            "defaultValue": "http://s3-us-west-2.amazonaws.com/stl-video/DefaultHub.json"
         },
         "nodeConfigJsonFile": {
             "type": "string",
             "metadata": {
                 "description": "Download link for the node config json file you wish to use to configure the nodes. For example you may upload the required config file to an Azure storage account and provide the link here."
             },
-            "defaultValue": ""
+            "defaultValue": "http://s3-us-west-2.amazonaws.com/stl-video/DefaultNodeWebDriver.json"
         }
     },
     "variables":{  
@@ -108,7 +108,10 @@
                 "labVirtualNetworkId":"[variables('labVirtualNetworkId')]",
                 "labSubnetName":"[variables('labSubnetName')]",
                 "disallowPublicIpAddress":false,
-                "artifacts":[  
+                "artifacts":[
+                    {
+                      "artifactId": "[resourceId('Microsoft.DevTestLab/labs/artifactSources/artifacts', parameters('labName'), 'public repo', 'windows-selenium')]"
+                    },
                     {  
                         "artifactId":"[resourceId('Microsoft.DevTestLab/labs/artifactSources/artifacts', parameters('labName'), 'public repo', 'windows-chocolatey')]",
                         "parameters":[  
